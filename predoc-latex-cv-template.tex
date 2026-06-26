@@ -1,0 +1,207 @@
+%==============================================================================
+%  Curriculum Vitae — Template
+%  Compile with: pdflatex cv.tex
+%==============================================================================
+\documentclass[10pt]{extarticle}
+
+%------------------------------------------------------------------------------
+%  Packages
+%------------------------------------------------------------------------------
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[expansion=false]{microtype}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+
+%------------------------------------------------------------------------------
+%  Colors & Links
+%------------------------------------------------------------------------------
+\definecolor{navy}{HTML}{1A3E6E}
+\hypersetup{
+  colorlinks = true,
+  urlcolor   = navy,
+  linkcolor  = navy,
+  pdftitle   = {Curriculum Vitae},
+  pdfauthor  = {}
+}
+
+%------------------------------------------------------------------------------
+%  Spacing
+%------------------------------------------------------------------------------
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+%------------------------------------------------------------------------------
+%  Running header (name + page number on every page except the first)
+%------------------------------------------------------------------------------
+\fancypagestyle{runningheader}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \fancyhead[R]{\small\textbf{Your Name}\quad\textbar\quad Page \thepage}%
+}
+\pagestyle{runningheader}
+\setlength{\headsep}{12pt}
+
+%------------------------------------------------------------------------------
+%  Section headings: bold title with a thin full-width rule underneath
+%------------------------------------------------------------------------------
+\titleformat{\section}
+  {\normalfont\large\bfseries}{}{0pt}{}
+  [\vspace{-0.3em}\rule{\linewidth}{0.3pt}]
+\titlespacing*{\section}{0pt}{0.8em}{0.3em}
+
+%------------------------------------------------------------------------------
+%  List formatting
+%------------------------------------------------------------------------------
+\renewcommand{\labelitemi}{\textendash}
+\setlist[itemize]{leftmargin=1.5em, topsep=0pt, itemsep=0.1em, parsep=0pt, font=\small}
+
+% Numbered/labelled list used for publications, presentations, etc.
+\newlist{publist}{enumerate}{1}
+\setlist[publist]{leftmargin=0pt, itemindent=0pt, topsep=0pt, itemsep=0.5em, parsep=0pt, label={}}
+
+%------------------------------------------------------------------------------
+%  Experience entry macro
+%    #1 Organization   #2 Location
+%    #3 Role/Title     #4 Dates
+%    #5 \item bullets
+%------------------------------------------------------------------------------
+\newcommand{\entry}[5]{%
+  \noindent\textbf{#1}\hfill #2\par
+  \noindent\textit{#3}\hfill #4\par
+  \begin{itemize}#5\end{itemize}%
+}
+\newcommand{\entrygap}{\vspace{0.5em}}
+
+%==============================================================================
+\begin{document}
+\thispagestyle{empty}
+
+%------------------------------------------------------------------------------
+%  Header
+%------------------------------------------------------------------------------
+\begin{center}
+  {\LARGE\textbf{Your Name}}\\[0.5em]
+  City, ST~\textperiodcentered~%
+  \href{mailto:email@example.com}{email@example.com}~\textperiodcentered~%
+  (000) 000-0000~\textperiodcentered~%
+  \href{https://example.com}{LinkedIn}
+\end{center}
+
+%------------------------------------------------------------------------------
+%  Education
+%------------------------------------------------------------------------------
+\section*{Education}
+\textbf{Institution Name}\hfill 20XX--20XX\\
+Degree, Field of Study \textperiodcentered\ Honor \textperiodcentered\ Distinction\hfill GPA: 0.00/0.00\\
+Certificate \textperiodcentered\ Minor(s)\\[0.4em]
+\textit{Relevant Coursework:} Course One; Course Two; Course Three; Course Four
+
+%------------------------------------------------------------------------------
+%  Research Interests
+%------------------------------------------------------------------------------
+\section*{Research Interests}
+Interest One; Interest Two; Interest Three; Interest Four
+
+%------------------------------------------------------------------------------
+%  Research Experience
+%------------------------------------------------------------------------------
+\section*{Research Experience}
+\entry
+  {Organization Name}{City, ST}
+  {Role / Title}{Mon 20XX--present}
+  {\item Accomplishment or responsibility described with an action verb and a quantified result.
+   \item Second bullet describing impact, method, or output.}
+\entrygap
+\entry
+  {Organization Name}{City, ST}
+  {Role / Title}{Mon 20XX--Mon 20XX}
+  {\item Accomplishment or responsibility described with an action verb and a quantified result.
+   \item Second bullet describing impact, method, or output.}
+
+%------------------------------------------------------------------------------
+%  Policy & Industry Experience
+%------------------------------------------------------------------------------
+\section*{Policy and Industry Experience}
+\entry
+  {Organization Name}{City, ST}
+  {Role / Title}{Mon 20XX--Mon 20XX}
+  {\item Accomplishment or responsibility described with an action verb and a quantified result.
+   \item Second bullet describing impact, method, or output.}
+\entrygap
+\entry
+  {Organization Name}{City, ST}
+  {Role / Title}{Mon 20XX--Mon 20XX}
+  {\item Accomplishment or responsibility described with an action verb and a quantified result.
+   \item Second bullet describing impact, method, or output.
+   \item Third bullet, optional.}
+
+%------------------------------------------------------------------------------
+%  Publications
+%------------------------------------------------------------------------------
+\section*{Peer-Reviewed Publications}
+\begin{publist}
+  \item Author, A., \textbf{Your Name}, \& Author, B.\ (20XX). Title of the Article. \textit{Journal Name}. \href{https://example.com}{doi:00.0000/example}
+  \item Author, A., \textbf{Your Name}, \& Author, B.\ (forthcoming). Title of the Chapter. In \textit{Edited Volume Title}. Publisher.
+\end{publist}
+
+%------------------------------------------------------------------------------
+%  Work Under Review
+%------------------------------------------------------------------------------
+\section*{Work Under Review}
+\begin{publist}
+  \item Author, A., \textbf{Your Name}, \& Author, B.\ Title of the Manuscript Under Review. \textit{Journal Name}.
+\end{publist}
+
+%------------------------------------------------------------------------------
+%  Conference Presentations
+%------------------------------------------------------------------------------
+\section*{Conference Presentations}
+\begin{publist}
+  \item \textbf{Your Name}. Title of the Presentation. Conference Name, City, ST (20XX).
+  \item Author, A., \textbf{Your Name}, \& Author, B. Title of the Presentation. Conference Name, City, ST (20XX).
+\end{publist}
+
+%------------------------------------------------------------------------------
+%  Course Papers
+%------------------------------------------------------------------------------
+\section*{Course Papers}
+\begin{publist}
+  \item \textbf{Your Name}\ (20XX). Title of the Paper. Brief description of method and data. \textit{Course Name}, Instructor, Institution.
+\end{publist}
+
+%------------------------------------------------------------------------------
+%  Fellowships, Honors, and Awards
+%------------------------------------------------------------------------------
+\section*{Fellowships, Honors, and Awards}
+\begin{tabular}{@{}p{0.55in}p{5.65in}@{}}
+  \textbf{20XX} & Award or honor; Award or honor; Award or honor \\[0.4em]
+  \textbf{20XX} & Award or honor; Award or honor \\[0.4em]
+  \textbf{20XX} & Award or honor
+\end{tabular}
+
+%------------------------------------------------------------------------------
+%  Service
+%------------------------------------------------------------------------------
+\section*{Service}
+\begin{itemize}
+  \item \textbf{Role}, Organization (20XX--present)
+  \item \textbf{Role}, Organization, City, ST (20XX)
+  \item \textbf{Role}, Organization (20XX--20XX)
+\end{itemize}
+
+%------------------------------------------------------------------------------
+%  Skills & Additional Information
+%------------------------------------------------------------------------------
+\section*{Skills and Additional Information}
+\begin{itemize}
+  \item \textbf{Programming:} Language (level); Language, Language (level); Tool, Tool
+  \item \textbf{Data and Software:} Tool, Tool, Tool, Tool
+  \item \textbf{Languages / Other:} Detail, Detail, Detail
+  \item \textbf{Interests:} Interest, interest, interest
+\end{itemize}
+
+\end{document}
