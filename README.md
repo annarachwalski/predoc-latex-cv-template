@@ -16,7 +16,7 @@ that signal research experience while staying compact enough to read quickly, an
 assumes a bachelor's degree as the highest credential. If needed, it's simple to 
 add a master's. 
  
-## Sections
+## sections
  
 In order: Header, Education, Research Interests, Research Experience, Policy and
 Industry Experience, Peer-Reviewed Publications, Work Under Review, Conference
@@ -25,14 +25,14 @@ Presentations, Course Papers, Fellowships/Honors/Awards, Service, and Skills.
 The sections are independent and can be reordered, renamed, or removed without
 affecting the rest of the document.
  
-## Requirements
+## requirements
  
 A LaTeX distribution that includes `pdflatex`: TeX Live (Linux/Windows), MacTeX
 (macOS), or MiKTeX (Windows). All packages used are standard and ship with full
 distributions: `geometry`, `fontenc`, `microtype`, `enumitem`, `titlesec`,
 `xcolor`, `fancyhdr`, and `hyperref`. No external fonts required.
  
-## Usage
+## usage
  
 Compile from the command line:
  
@@ -46,23 +46,23 @@ expected for documents that reference page numbers.
 The template can also be compiled on Overleaf with no local installation: create
 a project and upload the `.tex` file.
  
-## Customization
+## customization
  
-- **Accent color.** Defined near the top as `\definecolor{navy}{HTML}{1A3E6E}`.
+- **accent color** Defined near the top as `\definecolor{navy}{HTML}{1A3E6E}`.
   Replace the hex value to change link and rule color.
-- **Margins.** Set in `\usepackage[margin=1in]{geometry}`.
-- **Entries.** Each position uses the `\entry` macro, which takes organization,
+- **margins** Set in `\usepackage[margin=1in]{geometry}`.
+- **entries** Each position uses the `\entry` macro, which takes organization,
   location, role, and dates, followed by `\item` bullets. Use `\entrygap` between
   entries for consistent spacing.
-- **Citations.** Publications, presentations, and papers use a plain unnumbered
+- **citations** Publications, presentations, and papers use a plain unnumbered
   list and are formatted by hand, giving full control over citation style. This
   can be replaced with a BibTeX setup if preferred.
-- **Running header.** The name in the top right of later pages is set in the
+- **running header** The name in the top right of later pages is set in the
   `runningheader` page style.
-- **Adding a master's.** The Education section is plain text rather than a macro,
+- **adding a master's** The Education section is plain text rather than a macro,
   so a second degree can be added by duplicating the institution and degree
   lines, most recent first.
-## Files
+## files
  
 ```
 predoc-latex-cv-template.tex   LaTeX source
@@ -71,6 +71,6 @@ README.md
 LICENSE
 ```
  
-## License
+## license
  
 See LICENSE for terms.
